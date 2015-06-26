@@ -1,0 +1,25 @@
+{
+  "name": "webpack-d3-charts",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fengshuo/webpack-d3-charts",
+  "authors": [
+    "fengshuo <fengshuo142003@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.5",
+    "jquery": "~2.1.4",
+    "topojson": "~1.6.19"
+  }
+}
