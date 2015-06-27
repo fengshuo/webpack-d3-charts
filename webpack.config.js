@@ -6,7 +6,10 @@ var config = {
 		this.resolve.alias[name] = path;
 		this.module.noParse.push(path);
 	},
-	entry: "./app/js/main.js",
+	entry: {
+		app: ["./app/js/main.js"],
+		vendors: ["d3","jquery"]
+	},
 	output: {
 		"path": "./build",
 		"filename": "bundle.js"
@@ -25,7 +28,9 @@ var config = {
 		new webpack.ProvidePlugin({
 			d3: "d3",
 			$: "jquery"
-		})
+		}),
+		// CommonsChunkPlugin will take the vendors chunk and create a commonly used js file
+		new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js')
 	]
 
 };
