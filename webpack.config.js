@@ -7,12 +7,13 @@ var config = {
 		this.module.noParse.push(path);
 	},
 	entry: {
-		app: ["./app/js/main.js"],
+		page1: ["./app/js/main.js"],
+		page2: ["./app/js/main2.js", "topojson"],
 		vendors: ["d3","jquery"]
 	},
 	output: {
 		"path": "./build",
-		"filename": "bundle.js"
+		"filename": "[name].bundle.js"
 	},
 	module: {
 		noParse: [],
@@ -37,5 +38,6 @@ var config = {
 
 config.addVendor('jquery', bower_dir + '/jquery/dist/jquery.min.js');
 config.addVendor('d3', bower_dir + '/d3/d3.min.js');
+config.addVendor('topojson', bower_dir + '/topojson/topojson.js');
 
 module.exports = config;

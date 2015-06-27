@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		1:0
+/******/ 		2:0
 /******/ 	};
 
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".bundle.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"0":"page1","1":"page2"}[chunkId]||chunkId) + ".bundle.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -100,7 +100,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(4);
-	module.exports = __webpack_require__(10);
+	module.exports = __webpack_require__(12);
 
 
 /***/ },
@@ -116,7 +116,7 @@
 
 /***/ },
 
-/***/ 10:
+/***/ 12:
 /***/ function(module, exports) {
 
 	/*! jQuery v2.1.4 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
