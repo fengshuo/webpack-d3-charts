@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var bower_dir = __dirname + '/bower_components';
 
 var config = {
@@ -18,7 +19,15 @@ var config = {
 	},
 	resolve: {
 		alias: {}
-	}
+	},
+	plugins: [
+		// This plugin makes a module available as variable in every module
+		new webpack.ProvidePlugin({
+			d3: "d3",
+			$: "jquery"
+		})
+	]
+
 };
 
 config.addVendor('jquery', bower_dir + '/jquery/dist/jquery.min.js');
